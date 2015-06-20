@@ -1,0 +1,89 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  operario: 
+  obra: 
+  ud1: 1.5
+  ud1material_id: 1
+  ud2: 1.5
+  ud2material_id: 1
+  ud3: 1.5
+  ud3material_id: 1
+  ud4: 1.5
+  ud4material_id: 1
+  ud5: 1.5
+  ud5material_id: 1
+  ud6: 1.5
+  ud6material_id: 1
+  ud7: 1.5
+  ud7material_id: 1
+  ud8: 1.5
+  ud8material_id: 1
+  ud9: 1.5
+  ud9material_id: 1
+  ud10: 1.5
+  ud10material_id: 1
+  ud11: 1.5
+  ud11material_id: 1
+  ud12: 1.5
+  ud12material_id: 1
+  ud13: 1.5
+  ud13material_id: 1
+  ud14: 1.5
+  ud14material_id: 1
+  ud15: 1.5
+  ud15material_id: 1
+  ud16: 1.5
+  ud16material_id: 1
+  ud17: 1.5
+  ud17material_id: 1
+  ud18: 1.5
+  ud18material_id: 1
+  ud19: 1.5
+  ud19material_id: 1
+  ud20: 1.5
+  ud20material_id: 1
+
+two:
+  operario: 
+  obra: 
+  ud1: 1.5
+  ud1material_id: 1
+  ud2: 1.5
+  ud2material_id: 1
+  ud3: 1.5
+  ud3material_id: 1
+  ud4: 1.5
+  ud4material_id: 1
+  ud5: 1.5
+  ud5material_id: 1
+  ud6: 1.5
+  ud6material_id: 1
+  ud7: 1.5
+  ud7material_id: 1
+  ud8: 1.5
+  ud8material_id: 1
+  ud9: 1.5
+  ud9material_id: 1
+  ud10: 1.5
+  ud10material_id: 1
+  ud11: 1.5
+  ud11material_id: 1
+  ud12: 1.5
+  ud12material_id: 1
+  ud13: 1.5
+  ud13material_id: 1
+  ud14: 1.5
+  ud14material_id: 1
+  ud15: 1.5
+  ud15material_id: 1
+  ud16: 1.5
+  ud16material_id: 1
+  ud17: 1.5
+  ud17material_id: 1
+  ud18: 1.5
+  ud18material_id: 1
+  ud19: 1.5
+  ud19material_id: 1
+  ud20: 1.5
+  ud20material_id: 1

@@ -1,0 +1,37 @@
+<h1>Últimos partes introducidos</h1>
+
+<table id="index_report">
+  <thead>
+  <tr>
+	<th width="125px">Referencia</th>
+    <th width="200px">Operario</th>
+    <th width="250px">Obra</th>
+	<th width="125px">Fecha</th>
+  </tr>
+  </thead>
+
+  <tbody>
+	
+<% hoy = Date.today %>
+<% ayer = Date.yesterday %>
+<% @partes.each do |parte| %>
+  <% if (parte.created_at.to_date == hoy.to_date) ||
+	 (parte.created_at.to_date == ayer.to_date) %>
+  <tr>
+	<td><%= link_to (parte.created_at.to_date.strftime("%Y") + '.' + parte.id.to_s), :controller => "partes", :action => "show", :id => parte.id %></td>
+    <td><%= link_to (parte.operario.nombre + ' ' + parte.operario.apellidos), :controller => "operarios", :action => "show", :id => parte.operario.id %></td>
+    <td><%= link_to parte.obra.nombre, :controller => "obras", :action => "show", :id => parte.obra.id %></td>
+	<td><%=h parte.created_at.to_date.strftime("%d-%m-%y") %></td>
+    <td class="crud"><%= link_to image_tag("editar.png", :border=>0), edit_parte_path(parte) %></td>
+    <td class="crud"><%= link_to image_tag("borrar.png", :border=>0), parte, :confirm => '¿Está seguro?', :method => :delete %></td>
+  </tr>
+  <% end %>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<div id="acciones">
+<a href="./partes.pdf">PDF</a>
+</div>

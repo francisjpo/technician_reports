@@ -1,0 +1,202 @@
+<h1>Detalles del parte</h1>
+
+<table id="new">
+	<tr>
+		<td width="125px"><strong>Referencia:</strong></td>
+		<td width="200px"><%=h @parte.created_at.to_date.strftime("%Y") + '.' + @parte.id.to_s %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Operario:</strong></td>
+		<td width="200px"><%=h @parte.operario.nombre + ' ' + @parte.operario.apellidos %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Obra:</strong></td>
+		<td width="200px"><%=h @parte.obra.nombre %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Ciudad:</strong></td>
+		<td width="200px"><%=h @parte.obra.ciudad.nombre %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Distancia:</strong></td>
+		<td width="200px"><%=h @parte.obra.ciudad.kilometraje %> km.</td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Dieta:</strong></td>
+		<td width="200px"><%=h @parte.obra.ciudad.dieta %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Fecha:</strong></td>
+		<td width="200px"><%=h @parte.created_at.to_date.strftime("%d-%m-%y") %></td>
+	</tr>
+</table>
+
+<h2>Horas trabajadas</h2>
+
+<table id="new">
+<% if !@parte.horas_base.nil? %>
+	<tr>
+		<td width="125px"><strong>Horas base:</strong></td>
+		<td width="200px"><%=h @parte.horas_base %></td>
+	</tr>
+<% end %>
+<% if !@parte.horas_extra.nil? %>
+	<tr>
+		<td width="125px"><strong>Horas extra:</strong></td>
+		<td width="200px"><%=h @parte.horas_extra %></td>
+	</tr>
+<% end %>
+
+<% if !@parte.horas_nocturna.nil? %>
+	<tr>
+		<td width="125px"><strong>Horas nocturna:</strong></td>
+		<td width="200px"><%=h @parte.horas_nocturna %></td>
+	</tr>
+<% end %>
+
+<% if !@parte.horas_festivo.nil? %>
+	<tr>
+		<td width="125px"><strong>Horas festivo:</strong></td>
+		<td width="200px"><%=h @parte.horas_festivo %></td>
+	</tr>
+<% end %>
+</table>
+<h2>Materiales instalados</h2>
+
+<table id="index_redux">
+	<thead>
+	<tr>
+		<th width="125px">Cant.</th>
+		<th width="250px">Descripción</th>
+	</tr>
+	</thead>
+	<tbody>
+<% @materiales.each do |material| %>
+	<% if (material.id == @parte.ud1material_id) && !@parte.ud1.nil? %>
+	<tr>
+		<td><%=h @parte.ud1 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud2material_id) && !@parte.ud2.nil? %>
+	<tr>
+		<td><%=h @parte.ud2 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud3material_id) && !@parte.ud3.nil? %>
+	<tr>
+		<td><%=h @parte.ud3 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud4material_id) && !@parte.ud4.nil? %>
+	<tr>
+		<td><%=h @parte.ud4 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud5material_id) && !@parte.ud5.nil? %>
+	<tr>
+		<td><%=h @parte.ud5 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud6material_id) && !@parte.ud6.nil? %>
+	<tr>
+		<td><%=h @parte.ud6 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud7material_id) && !@parte.ud7.nil? %>
+	<tr>
+		<td><%=h @parte.ud7 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud8material_id) && !@parte.ud8.nil? %>
+	<tr>
+		<td><%=h @parte.ud8 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud9material_id) && !@parte.ud9.nil? %>
+	<tr>
+		<td><%=h @parte.ud9 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud10material_id) && !@parte.ud10.nil? %>
+	<tr>
+		<td><%=h @parte.ud10 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud11material_id) && !@parte.ud11.nil? %>
+	<tr>
+		<td><%=h @parte.ud11 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud12material_id) && !@parte.ud12.nil? %>
+	<tr>
+		<td><%=h @parte.ud12 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud13material_id) && !@parte.ud13.nil? %>
+	<tr>
+		<td><%=h @parte.ud13 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud14material_id) && !@parte.ud14.nil? %>
+	<tr>
+		<td><%=h @parte.ud14 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud15material_id) && !@parte.ud15.nil? %>
+	<tr>
+		<td><%=h @parte.ud15 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud16material_id) && !@parte.ud16.nil? %>
+	<tr>
+		<td><%=h @parte.ud16 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud17material_id) && !@parte.ud17.nil? %>
+	<tr>
+		<td><%=h @parte.ud17 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud18material_id) && !@parte.ud18.nil? %>
+	<tr>
+		<td><%=h @parte.ud18 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud19material_id) && !@parte.ud19.nil? %>
+	<tr>
+		<td><%=h @parte.ud19 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+	<% if (material.id == @parte.ud20material_id) && !@parte.ud20.nil? %>
+	<tr>
+		<td><%=h @parte.ud20 %></td>
+		<td><%= material.nombre %></td>
+	</tr>
+	<% end %>
+<% end %>
+</tbody>
+</table>
+<br />
+<div id="acciones">
+	<%= link_to 'Nuevo parte', 'parteop/new' %> |
+	<%= link_to 'PDF', parte_path(@parte, :pdf) %>
+</div>

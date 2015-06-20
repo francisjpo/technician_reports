@@ -1,0 +1,35 @@
+<h1>Nueva obra</h1>
+
+<% form_for(@obra) do |f| %>
+  <%= f.error_messages %>
+<table id="new">
+	<tr>
+		<td width="125px"><strong><%= f.label :nombre %></strong></td>
+		<td width="300px"><%= f.text_field :nombre %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Dirección:</strong></td>
+		<td width="300px"><%= f.text_field :direccion %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong><%= f.label :ciudad %></strong></td>
+		<td width="300px">
+	    <select name = "obra[ciudad_id]">
+	    <% @ciudades.each do |ciudad| %>
+	       <option value="<%= ciudad.id %>"
+	         <%= 'selected' if ciudad.id == @obra.ciudad_id %>>
+	         <%= ciudad.nombre %>
+	       </option>
+	   <% end %>
+	  </select></td>
+	</tr>
+</table>
+
+  <p>
+    <%= f.submit 'Crear' %>
+  </p>
+<% end %>
+
+<div id="acciones">
+<%= link_to 'Volver', obras_path %>
+</div>

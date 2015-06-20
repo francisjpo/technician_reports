@@ -1,0 +1,46 @@
+<h1>Detalles de la ciudad</h1>
+
+<table id="new">
+	<tr>
+		<td width="125px"><strong>Nombre:</strong></td>
+		<td width="200px"><%=h @ciudad.nombre %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Kilometraje:</strong></td>
+		<td width="200px"><%=h @ciudad.kilometraje %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Dieta:</strong></td>
+		<td width="200px"><%=h @ciudad.dieta %></td>
+	</tr>
+</table>
+
+<h2>Partes realizados</h2>
+
+<table id="index_redux">
+	<thead>
+	<tr>
+		<th width="125px">Referencia</th>
+		<th width="200px">Obra</th>
+		<th width="175px">Operario</th>
+		<th width="100px">Fecha</th>
+	</tr>
+	</thead>
+	<tbody>
+    <% @partes.each do |parte| %>
+	<% if parte.obra.ciudad.id == @ciudad.id %>
+    <tr>
+		<td><%= link_to (parte.created_at.to_date.strftime("%Y") + '.' + parte.id.to_s), :controller => "partes", :action => "show", :id => parte.id %></td>
+		<td><%= link_to parte.obra.nombre, :controller => "obras", :action => "show", :id => parte.obra.id %></td>
+		<td><%= link_to parte.operario.nombre + ' ' + parte.operario.apellidos, :controller => "operarios", :action => "show", :id => parte.operario.id %></td>
+		<td><%=h parte.created_at.to_date.strftime("%d-%m-%y") %></td>
+	</tr>
+	<% end %>
+  <% end %>
+	</tbody>
+</table>
+
+<div id="acciones">
+<%= link_to 'Editar', edit_ciudad_path(@ciudad) %> |
+<%= link_to 'Volver', ciudades_path %>
+</div>

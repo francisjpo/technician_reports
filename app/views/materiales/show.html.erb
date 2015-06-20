@@ -1,0 +1,16 @@
+<h1>Detalles del material</h1>
+<table id="new">
+	<tr>
+		<td width="125px"><strong>Nombre:</strong></td>
+		<td width="200px"><%=h @material.nombre %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Referencia:</strong></td>
+		<td width="200px"><%=h @material.referencia %></td>
+	</tr>
+</table>
+
+<div id="acciones">
+<%= link_to 'Editar', edit_material_path(@material) %> |
+<%= link_to 'Volver', materiales_path %>
+</div>

@@ -1,0 +1,34 @@
+<h1>Listado de operarios</h1>
+
+<table id="index_redux">
+  <thead>
+  	<tr>
+    	<th width="125px">Nombre</th>
+    	<th width="200px">Apellidos</th>
+    	<th width="100px">Usuario</th>
+    	<th width="125px">Teléfono</th>
+    	<th width="200px">Correo-e</th>
+  	</tr>
+  </thead>
+
+  <tbody>
+<% @operarios.each do |operario| %>
+  <tr>
+	<td><%= link_to operario.nombre, :controller => "operarios", :action => "show", :id => operario.id %></td>
+	<td><%= link_to operario.apellidos, :controller => "operarios", :action => "show", :id => operario.id %></td>
+    <td><%=h operario.usuario %></td>
+    <td><%=h operario.telefono %></td>
+    <td><%=h operario.email %></td>
+    <td class="crud"><%= link_to image_tag("editar.png", :border=>0), edit_operario_path(operario) %></td>
+    <td class="crud"><%= link_to image_tag("borrar.png", :border=>0), operario, :confirm => '¿Está seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+<br />
+
+<div id="acciones">
+	<%= link_to 'Nuevo operario', new_operario_path %> |
+	<a href="./operarios.pdf">PDF</a>
+</div>

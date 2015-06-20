@@ -1,0 +1,26 @@
+<h1>Listado de ciudades</h1>
+
+<table id="index_redux">
+  <thead>
+  	<tr>
+    	<th width="150px">Nombre</th>
+    	<th width="125px">Kilometraje</th>
+    	<th width="125px">Dieta</th>
+  </tr>
+
+<tbody>
+<% @ciudades.each do |ciudad| %>
+  <tr>
+    <td><%= link_to ciudad.nombre, :controller => "ciudades", :action => "show", :id => ciudad.id %></td>
+    <td><%=h ciudad.kilometraje %></td>
+    <td><%=h ciudad.dieta %></td>
+    <td class="crud"><%= link_to image_tag("editar.png", :border=>0), edit_ciudad_path(ciudad) %></td>
+    <td class="crud"><%= link_to image_tag("borrar.png", :border=>0), ciudad, :confirm => '¿Está seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+<br />
+<div id="acciones">
+<%= link_to 'Nueva ciudad', new_ciudad_path %>
+</div>

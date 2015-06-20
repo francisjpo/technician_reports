@@ -1,0 +1,171 @@
+<h1>Editando parte</h1>
+
+<% form_for(@parte) do |f| %>
+  <%= f.error_messages %>
+<table id="new">
+	<tr>
+		<td width="150px"><strong><%= f.label :operario %></strong></td>
+		<td width="200px">
+		<select name = "parte[operario_id]">
+	    <% @operarios.each do |operario| %>
+	       <option value="<%= operario.id %>"
+	         <%= 'selected' if operario.id == @parte.operario_id %>>
+	         <%= operario.nombre + ' ' + operario.apellidos%>
+	       </option>
+	   <% end %>
+	  </select></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Contraseña</strong></td>
+		<td width="200px"><%= f.password_field :contrasena %></td>
+	</tr>
+	<tr>
+		<td width="150px"><strong><%= f.label :obra %></strong></td>
+		<td width="200px">
+    		<select name = "parte[obra_id]">
+    		<% @obras.each do |obra| %>
+       		<option value="<%= obra.id %>"
+         		<%= 'selected' if obra.id == @parte.obra_id %>>
+         		<%= obra.nombre %>
+       		</option>
+    		<% end %>
+  		</select></td>
+	</tr>
+	<tr>
+		<td width="150px"><strong>Fecha:</strong></td>
+		<td width="200px"><%=h @parte.created_at.to_date.strftime("%d-%m-%y") %></td>
+	</tr>
+	<tr>
+		<td width="150px"><strong><%= f.label :horas_base %></strong></td>
+		<td width="200px"><%= f.text_field :horas_base %></td>
+	</tr>
+	<tr>
+		<td width="150px"><strong><%= f.label :horas_extra %></strong></td>
+		<td width="200px"><%= f.text_field :horas_extra %></td>
+	</tr>
+	<tr>
+		<td width="150px"><strong><%= f.label :horas_nocturna %></strong></td>
+		<td width="200px"><%= f.text_field :horas_nocturna %></td>
+	</tr>
+	<tr>
+		<td width="150px"><strong><%= f.label :horas_festivo %></strong></td>
+		<td width="200px"><%= f.text_field :horas_festivo %></td>
+	</tr>
+</table>
+
+<% materiales = Material.find(:all, :order => :nombre) %>
+<table id="new">
+	<tr>
+		<th width="150px">Cantidad</th>
+		<th width="200px">Descripción</th>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud1 %></td>
+		<td width="200px"><%= f.collection_select :ud1material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud2 %></td>
+		<td width="200px"><%= f.collection_select :ud2material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud3 %></td>
+		<td width="200px"><%= f.collection_select :ud3material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud4 %></td>
+		<td width="200px"><%= f.collection_select :ud4material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud5 %></td>
+		<td width="200px"><%= f.collection_select :ud5material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud6 %></td>
+		<td width="200px"><%= f.collection_select :ud6material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud7 %></td>
+		<td width="200px"><%= f.collection_select :ud7material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud8 %></td>
+		<td width="200px"><%= f.collection_select :ud8material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud9 %></td>
+		<td width="200px"><%= f.collection_select :ud9material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud10 %></td>
+		<td width="200px"><%= f.collection_select :ud10material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud11 %></td>
+		<td width="200px"><%= f.collection_select :ud11material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud12 %></td>
+		<td width="200px"><%= f.collection_select :ud12material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud13 %></td>
+		<td width="200px"><%= f.collection_select :ud13material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud14 %></td>
+		<td width="200px"><%= f.collection_select :ud14material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud15 %></td>
+		<td width="200px"><%= f.collection_select :ud15material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud16 %></td>
+		<td width="200px"><%= f.collection_select :ud16material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud17 %></td>
+		<td width="200px"><%= f.collection_select :ud17material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud18 %></td>
+		<td width="200px"><%= f.collection_select :ud18material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud19 %></td>
+		<td width="200px"><%= f.collection_select :ud19material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+	<tr>
+		<td width="150px"><%= f.text_field :ud20 %></td>
+		<td width="200px"><%= f.collection_select :ud20material_id, materiales, 
+									:id, :nombre %></td>
+	</tr>
+</table>
+  <p>
+    <%= f.submit 'Actualizar' %>
+  </p>
+<% end %>
+<br />
+<div id="acciones">
+<%= link_to 'Mostrar', @parte %> |
+<%= link_to 'Volver', '/partop' %>
+</div>

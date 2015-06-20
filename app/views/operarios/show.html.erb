@@ -1,0 +1,53 @@
+<h1>Detalles del operario</h1>
+
+<table id="new">
+	<tr>
+		<td width="125px"><strong>Nombre:</strong></td>
+		<td width="200px"><%=h @operario.nombre %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Apellidos:</strong></td>
+		<td width="200px"><%=h @operario.apellidos %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Usuario:</strong></td>
+		<td width="200px"><%=h @operario.usuario %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Teléfono:</strong></td>
+		<td width="200px"><%=h @operario.telefono %></td>
+	</tr>
+	<tr>
+		<td width="125px"><strong>Correo-e:</strong></td>
+		<td width="200px"><%=h @operario.email %></td>
+	</tr>
+</table>
+
+<h2>Partes realizados</h2>
+
+<table id="index_redux">
+	<thead>
+	<tr>
+		<th width="125px">Referencia</th>
+		<th width="175px">Obra</th>
+		<th width="125px">Fecha</th>
+	</tr>
+	</thead>
+	<tbody>
+    <% @partes.each do |parte| %>
+	<% if parte.operario.id == @operario.id %>
+    <tr>
+		<td><%= link_to (parte.created_at.to_date.strftime("%Y") + '.' + parte.id.to_s), :controller => "partes", :action => "show", :id => parte.id %></td>
+		<td><%= link_to parte.obra.nombre, :controller => "obras", :action => "show", :id => parte.obra.id %></td>
+		<td><%=h parte.created_at.to_date.strftime("%d-%m-%y") %></td>
+	</tr>
+	<% end %>
+  <% end %>
+	</tbody>
+</table>
+<br />
+<div id="acciones">
+<%= link_to 'Editar', edit_operario_path(@operario) %> |
+<%= link_to 'Volver', operarios_path %> |
+<%= link_to 'PDF', operario_path(@operario, :pdf) %>
+</div>

@@ -1,0 +1,30 @@
+<h1>Listado de obras</h1>
+
+<table id="index_redux">
+  <thead>
+  <tr>
+    <th width="300px">Nombre</th>
+    <th width="300px">Direccion</th>
+    <th width="125px">Ciudad</th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+<% @obras.each do |obra| %>
+  <tr>
+    <td><%= link_to obra.nombre, :controller => "obras", :action => "show", :id => obra.id %></td>
+    <td><%= link_to obra.direccion, :controller => "obras", :action => "show", :id => obra.id %></td>
+    <td><%=h obra.ciudad.nombre %></td>
+    <td class="crud"><%= link_to image_tag("editar.png", :border=>0), edit_obra_path(obra) %></td>
+    <td class="crud"><%= link_to image_tag("borrar.png", :border=>0), obra, :confirm => '¿Está seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+<br />
+<div id="acciones">
+<%= link_to 'Nueva obra', new_obra_path %> |
+<a href="./obras.pdf">PDF</a>
+</div>
